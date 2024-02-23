@@ -1,14 +1,25 @@
 from flask import Flask, render_template, jsonify, request, session, redirect, url_for
 from pycsv import csv
 import os
+import random
 
 app = Flask(__name__)
 
 # enumere tous les fichiers csv dans /verbes pour permettre a l'utilisateur de choisir son niveau
 fichiers_verbes = {}
 for verbe_file in os.listdir("verbes"):
-    print(verbe_file)
-    fichiers_verbes[verbe_file.replace(".csv", "")] = csv().load_file("verbes/" + verbe_file)
+    if verbe_file.endswith(".csv"):
+        print(verbe_file)
+        fichiers_verbes[verbe_file.replace(".csv", "")] = csv().load_file("verbes/" + verbe_file)
+        
+
+def choisir_questions(fichiercsv : csv, nb: int = 10) -> list:
+    questions = []
+    while len(questions) != nb:
+        verbe = random.choice(fichiercsv.table)
+        if not verbe in questions:
+            questions.append(verbe)
+    return questions
     
     
 ### Fonctions Internes au programme
@@ -26,12 +37,14 @@ def select_file():
 def run(verbesfile):
     """Lance le programme avec le fichier / niveau choisisss"""
     if verbesfile in fichiers_verbes:
-        return "c'est bon: " + verbesfile
+        return render_template("run.html", questions=choisir_questions(fichiers_verbes[verbesfile]))
     return redirect("/")
 
 
 
 @app.route("/")
+@app.route("/index")
+@app.route("/index.html")
 @app.route("/home")
 def index():
     return render_template("index.html")
