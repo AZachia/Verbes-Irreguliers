@@ -47,7 +47,7 @@ def index_js():
 def run(verbesfile):
     """Lance le programme avec le fichier / niveau choisisss"""
     if verbesfile in fichiers_verbes:
-        return render_template("test.html", questions=choisir_questions(fichiers_verbes[verbesfile]))
+        return render_template("test.html", verbes=choisir_questions(fichiers_verbes[verbesfile]))
     return redirect("/")
 
 
