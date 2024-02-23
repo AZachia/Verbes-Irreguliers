@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request, session
-from pycsv import csv, session
+from pycsv import csv
 import os
 
 app = Flask(__name__)
