@@ -1,3 +1,54 @@
-body {
+*
+{
+    margin: 0;
+    /* outline: red 1px solid; */
+}
+
+body 
+{
     font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+
+header
+{
+    color: aliceblue;
+    background-color: #4c40f9;
+    text-align: center;
+    padding: 50px;
+}
+
+
+main
+{
+    background-color: #f4f4f4;
+    padding: 50px 15%;
+}
+main div.pannel
+{
+
+    display: flex;
+    text-align: center;
+    gap: 20px;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 50px 20px;
+    box-shadow:  0 0 50px #e0e0e0;
+    background-color: #FFF;
+}
+main div.pannel a
+{
+    background-color: #FFF;
+    border-radius: 7px;
+    padding: 10px;
+    outline: #f4f4f4 1px solid;
+}
+
+footer
+{
+    padding: 10px;
+    background-color: #362ea4;
+    padding: 50px 10px;
+    color: aliceblue;
 }
