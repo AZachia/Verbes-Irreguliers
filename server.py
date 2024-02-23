@@ -23,10 +23,29 @@ def choisir_questions(fichiercsv : csv, nb: int = 10) -> list:
     return questions
 
 def generer_cle(randrange: tuple = (15, 25)) -> str:
-    chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&é'(-è_çà)=~#[|`\^@]"
+    chars = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
     nb = random.randint(*randrange)
     return "".join(random.choice([c for c in chars]) for _ in range(nb))
     
+
+def xor_crypt(message: str, cle: str) -> str:
+    """Encrypte ou décrypte le message avec XOR a partir de la clé message ⊕ cle"""
+    message_code = "" # Initialise la variable du message
+    for i in range(len(message)):
+        # Ajouter au message codé le caratere de la valeur la fonction XOR entre le caratere du message et son correspondant dans la clé
+        message_code += chr(ord(message[i]) ^ ord(cle[i % len(cle)]))
+
+    return message_code
+
+def crypt_talbe(table: list[list[str]], key = str):
+    new_table = []
+    for line in table:
+        new_line = []
+        for case in line:
+            new_line.append(xor_crypt(case, key))
+        new_table.append(new_line)
+    
+    return new_table
     
 ### Fonctions Internes au programme
 
@@ -35,9 +54,11 @@ def select_file():
     """selectionne le fichier a utiliser pour quetionner les verbes irreguliers"""
     file = request.args.get('file')
     
+
 @app.route("/src/<path:path>")
 def style(path):
     return send_from_directory('static', path)
+
 
 
 @app.route("/index.js")
@@ -52,10 +73,10 @@ def index_js():
 def run(verbesfile):
     """Lance le programme avec le fichier / niveau choisisss"""
     if verbesfile in fichiers_verbes:
-        verbes = str(choisir_questions(fichiers_verbes[verbesfile]))
         cle = generer_cle()
-        print(verbes)
-        return render_template("test.html", verbes=verbes, key = cle)
+        verbes = choisir_questions(fichiers_verbes[verbesfile])
+        verbes_crypted = str(crypt_talbe(verbes, cle))
+        return render_template("test.html", verbes=verbes_crypted, key=cle)
     return redirect("/")
 
 
