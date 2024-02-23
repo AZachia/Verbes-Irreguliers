@@ -29,9 +29,9 @@ def select_file():
     """selectionne le fichier a utiliser pour quetionner les verbes irreguliers"""
     file = request.args.get('file')
     
-@app.route("/src/style.css")
-def style():
-    return send_from_directory('static', 'style.css')
+@app.route("/src/<path:path>")
+def style(path):
+    return send_from_directory('static', path)
 
 
 @app.route("/index.js")
