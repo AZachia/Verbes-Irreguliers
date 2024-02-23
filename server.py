@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request, session, redirect, url_for
+from flask import Flask, render_template, jsonify, request, session, redirect, url_for, send_from_directory
 from pycsv import csv
 import os
 import random
@@ -28,6 +28,15 @@ def choisir_questions(fichiercsv : csv, nb: int = 10) -> list:
 def select_file():
     """selectionne le fichier a utiliser pour quetionner les verbes irreguliers"""
     file = request.args.get('file')
+    
+@app.route("/src/style.css")
+def style():
+    return send_from_directory('static', 'style.css')
+
+
+@app.route("/index.js")
+def index_js():
+    return send_from_directory('templates', 'index.js')
 
 
 
@@ -47,7 +56,7 @@ def run(verbesfile):
 @app.route("/index.html")
 @app.route("/home")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", levels = fichiers_verbes)
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="src/style.css">
     <script defer src="index.js"></script>
 </head>
+
 <body>
     <header>
         <h1>Verbes irreguliers anglais</h1>
@@ -15,9 +17,9 @@
     <main>
         <div class="pannel">
             <h2>Level</h2>
-            <a href="#">A</a>
-            <a href="#">B</a>
-            <a href="#">C</a>
+            {% for level in levels %}
+                <a href="/run/{{level}}">{{level}}</a>
+            {% endfor %}
         </div>
     </main>
     <footer>
