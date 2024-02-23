@@ -21,6 +21,8 @@ def select_file():
 
 
 
+### Fonctions publques
+
 @app.route("/")
 def index():
     return render_template("index.html")
