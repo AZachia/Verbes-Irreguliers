@@ -45,7 +45,15 @@ main div.pannel a
     text-decoration: none;
     background-color: #FFF;
     outline: #f4f4f4 1px solid;
+    transition: 50ms ease-in-out;
 }
+main div.pannel a:hover
+{
+    background-color: #4c40f9;
+    outline: #362ea4 1px solid;
+    color: white;
+}
+
 
 footer
 {
