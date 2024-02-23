@@ -6,7 +6,7 @@ from urllib.parse import quote
 
 app = Flask(__name__)
 
-# enumere tous les fichiers csv dans /verbes pour permettre a l'utilisateur de choisir son niveau
+# énumère tous les fichiers csv dans /verbes pour permettre à l'utilisateur de choisir son niveau
 fichiers_verbes = {}
 for verbe_file in os.listdir("verbes"):
     if verbe_file.endswith(".csv"):
@@ -29,10 +29,10 @@ def generer_cle(randrange: tuple = (15, 25)) -> str:
     
 
 def xor_crypt(message: str, cle: str) -> str:
-    """Encrypte ou décrypte le message avec XOR a partir de la clé message ⊕ cle"""
+    """Encrypte ou décrypte le message avec XOR à partir de la clé (message ⊕ cle)"""
     message_code = "" # Initialise la variable du message
     for i in range(len(message)):
-        # Ajouter au message codé le caratere de la valeur la fonction XOR entre le caratere du message et son correspondant dans la clé
+        # Ajouter au message codé le caratère de la valeur la fonction XOR entre le caratère du message et son correspondant dans la clé
         message_code += chr(ord(message[i]) ^ ord(cle[i % len(cle)]))
 
     return message_code
@@ -51,7 +51,7 @@ def crypt_talbe(table: list[list[str]], key = str):
 
 @app.route("/internal/select-file")
 def select_file():
-    """selectionne le fichier a utiliser pour quetionner les verbes irreguliers"""
+    """selectionne le fichier à utiliser pour questionner les verbes irréguliers"""
     file = request.args.get('file')
     
 
@@ -67,7 +67,7 @@ def index_js():
 
 
 
-### Fonctions publques
+### Fonctions publiques
 
 @app.route("/test/<verbesfile>")
 def run(verbesfile):
