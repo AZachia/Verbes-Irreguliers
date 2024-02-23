@@ -22,10 +22,14 @@
             <h2>Verbe</h2>
             <table>
                 <tr>
-                    <td>Base verbale</td><td>Preterit</td><td>participe passé</td>
+                    <td>Base verbale</td>
+                    <td>Preterit</td>
+                    <td>participe passé</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="" id=""></td><td><input type="text" name="" id=""></td><td><input type="text" name="" id=""></td>
+                    <td><input type="text" name="" id=""></td>
+                    <td><input type="text" name="" id=""></td>
+                    <td><input type="text" name="" id=""></td>
                 </tr>
             </table>
 
@@ -34,7 +38,12 @@
         </div>
     </main>
 
-    {{verbes}}
+
+    <script defer>
+        const verbes = {{verbes | safe }};
+        const key = "{{key | safe}}";
+    </script>
+
 
 </body>
 

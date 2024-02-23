@@ -16,11 +16,16 @@ for verbe_file in os.listdir("verbes"):
 
 def choisir_questions(fichiercsv : csv, nb: int = 10) -> list:
     questions = []
-    while len(questions) != nb:
+    while len(questions) != nb or len(questions) == len(fichiercsv.table):
         verbe = random.choice(fichiercsv.table)
         if not verbe in questions:
             questions.append(verbe)
     return questions
+
+def generer_cle(randrange: tuple = (15, 25)) -> str:
+    chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&é'(-è_çà)=~#[|`\^@]"
+    nb = random.randint(*randrange)
+    return "".join(random.choice([c for c in chars]) for _ in range(nb))
     
     
 ### Fonctions Internes au programme
@@ -47,7 +52,10 @@ def index_js():
 def run(verbesfile):
     """Lance le programme avec le fichier / niveau choisisss"""
     if verbesfile in fichiers_verbes:
-        return render_template("test.html", verbes=choisir_questions(fichiers_verbes[verbesfile]))
+        verbes = str(choisir_questions(fichiers_verbes[verbesfile]))
+        cle = generer_cle()
+        print(verbes)
+        return render_template("test.html", verbes=verbes, key = cle)
     return redirect("/")
 
 
