@@ -44,13 +44,12 @@ main div.pannel a
     color:black;
     text-decoration: none;
     background-color: #FFF;
-    outline: #f4f4f4 1px solid;
+    box-shadow:  0 0 5px #e0e0e0;
     transition: 50ms ease-in-out;
 }
 main div.pannel a:hover
 {
     background-color: #4c40f9;
-    outline: #362ea4 1px solid;
     color: white;
 }
 
