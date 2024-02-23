@@ -2,6 +2,7 @@ from flask import Flask, render_template, jsonify, request, session, redirect, u
 from pycsv import csv
 import os
 import random
+from urllib.parse import quote
 
 app = Flask(__name__)
 
