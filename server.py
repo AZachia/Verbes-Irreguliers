@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request, session
 from pycsv import csv, session
 import os
 
@@ -17,7 +17,7 @@ for verbe_file in os.listdir("verbes"):
 @app.route("/internal/select-file")
 def select_file():
     """selectionne le fichier a utiliser pour quetionner les verbes irreguliers"""
-    pass
+    file = request.args.get('file')
 
 
 
