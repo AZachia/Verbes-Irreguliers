@@ -23,7 +23,7 @@ def choisir_questions(fichiercsv : csv, nb: int = 10) -> list:
     return questions
 
 def generer_cle(randrange: tuple = (15, 25)) -> str:
-    chars = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#%&'()*+,-./:;<=>?@[\]^_{|}~"""
+    chars = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"""
     nb = random.randint(*randrange)
     return "".join(random.choice([c for c in chars]) for _ in range(nb))
     
