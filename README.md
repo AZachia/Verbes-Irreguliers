@@ -8,3 +8,4 @@ utilise un serveur python avec la blibliotheque Flask, choisi des verbes a inter
 
 #TODO :https://github.com/rodukov/IrregularVerbs/blob/main/frontend/src/verbs/all.json
 https://github.com/turneps403/iVerbs/blob/master/data/iVerb.json
+https://github.com/mmiots9/irregular-verbs/blob/master/verb-list.csv
