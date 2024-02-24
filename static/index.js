@@ -7,13 +7,18 @@ function xor_crypt(message, cle) {
 }
 
 
-
 function start() {
-    for (let i = 0; i < verbes.length; i++) {
-        verbe = xor_crypt(verbes[i][0], key);
+    verbe = xor_crypt(verbes[currentQuestion][0], key);
+    verbeElement.innerHTML = verbe;
+
+}
+
+function AskQuestion() {
+    currentQuestion += 1;
+    if (currentQuestion < verbes.length) {
+        verbe = xor_crypt(verbes[currentQuestion][0], key);
         verbeElement.innerHTML = verbe;
     }
-    
 }
 
 
@@ -25,4 +30,7 @@ const bvElement = document.getElementById("bv-element");
 const preteritElement = document.getElementById("preterit-element");
 const ppElement = document.getElementById("pp-element");
 
+var currentQuestion = 0;
+
 startBtn.addEventListener("click", start);
+sendBnt.addEventListener("click", AskQuestion);
