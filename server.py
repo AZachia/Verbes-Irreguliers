@@ -12,6 +12,8 @@ for verbe_file in os.listdir("verbes"):
     if verbe_file.endswith(".csv"):
         print(verbe_file)
         fichiers_verbes[verbe_file.replace(".csv", "")] = csv().load_file("verbes/" + verbe_file)
+
+#mettre une assertion ici
         
 
 def choisir_questions(fichiercsv : csv, nb: int = 10) -> list:
