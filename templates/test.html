@@ -8,18 +8,23 @@
     <link rel="shortcut icon" href="{{url_for('static', filename='GBFlag.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <script defer src="{{url_for('static', filename='index.js')}}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
 </head>
 
 <body>
+
+    <style>.github-fork-ribbon:before { background-color: #333; }</style>
+    <a class="github-fork-ribbon" href="http://github.com/azachia" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+
     <header>
         <h1>Verbes irreguliers anglais</h1>
     </header>
+
     <main>
+
         <div class="pannel" id="start-div">
-            <p>Welcome to the verb test! You will be given a verb in its base form. Your task is to fill in the correct
-                forms of the
-                verb in the given fields. If a verb form has two possible forms, please enter only one. Click 'Start' to
-                begin the
+            <p>Welcome to the verb test! You will be given a verb in its base form. Your task is to fill in the correct forms of the
+                verb in the given fields. If a verb form has two possible forms, please enter only one. Click 'Start' to begin the
                 test. Good luck!</p>
 
 
@@ -28,8 +33,7 @@
         </div>
 
         <div class="pannel" id="test-div" style="display: none;">
-            <span style="width: 49%;">5:21</span><span style="width: 9%; text-align: right;"
-                id="question-number">1/10</span>
+            <span style="width: 49%;">5:21</span><span style="width: 9%; text-align: right;" id="question-number">1/10</span>
             <h2 id="verbe-element">Verbe</h2>
             <table>
                 <tr>
@@ -64,10 +68,13 @@
         </div>
     </main>
 
+
     <script>
         const verbes = {{ verbes | safe }};
         const key = "{{key | safe}}";
     </script>
 
+
 </body>
+
 </html>
