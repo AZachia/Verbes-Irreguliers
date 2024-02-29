@@ -11,16 +11,15 @@
 </head>
 
 <body>
-
     <header>
         <h1>Verbes irreguliers anglais</h1>
     </header>
-
     <main>
-
         <div class="pannel" id="start-div">
-            <p>Welcome to the verb test! You will be given a verb in its base form. Your task is to fill in the correct forms of the
-                verb in the given fields. If a verb form has two possible forms, please enter only one. Click 'Start' to begin the
+            <p>Welcome to the verb test! You will be given a verb in its base form. Your task is to fill in the correct
+                forms of the
+                verb in the given fields. If a verb form has two possible forms, please enter only one. Click 'Start' to
+                begin the
                 test. Good luck!</p>
 
 
@@ -29,7 +28,8 @@
         </div>
 
         <div class="pannel" id="test-div" style="display: none;">
-            <span style="width: 49%;">5:21</span><span style="width: 9%; text-align: right;">1/10</span>
+            <span style="width: 49%;">5:21</span><span style="width: 9%; text-align: right;"
+                id="question-number">1/10</span>
             <h2 id="verbe-element">Verbe</h2>
             <table>
                 <tr>
@@ -52,25 +52,22 @@
             <h2>Finished !</h2>
 
 
-            <button>See the results</button>
+            <button id="see-results-btn">See the results</button>
 
         </div>
         <div class="pannel" id="result-div" style="display: none;">
             <h2>Results</h2>
 
 
-            <a>home</a>
+            <a href="/">home</a>
 
         </div>
     </main>
-
 
     <script>
         const verbes = {{ verbes | safe }};
         const key = "{{key | safe}}";
     </script>
 
-
 </body>
-
 </html>

@@ -29,6 +29,8 @@ function start() {
     verbe = xor_crypt(verbes[currentQuestion][0], key);
     verbeElement.innerHTML = verbe;
 
+    questionNumber.innerHTML = "Question " + (currentQuestion + 1) + " / " + verbes.length;
+
     let inputs = [bvElement, preteritElement, ppElement];
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener("keyup", inputChange)
@@ -80,6 +82,9 @@ function AskQuestion() {
     bvElement.focus();
 
     currentQuestion += 1;
+
+    questionNumber.innerHTML = "Question " + (currentQuestion + 1) + " / " + verbes.length;
+
     if (currentQuestion < verbes.length) {
         verbe = xor_crypt(verbes[currentQuestion][0], key);
         verbeElement.innerHTML = verbe;
@@ -106,6 +111,8 @@ const startdiv = document.getElementById("start-div");
 const testdiv = document.getElementById("test-div");
 const enddiv = document.getElementById("end-div");
 const resultdiv = document.getElementById("result-div");
+
+const questionNumber = document.getElementById("question-number");
 
 
 var currentQuestion = 0;
