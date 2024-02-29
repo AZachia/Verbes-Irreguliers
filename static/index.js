@@ -1,3 +1,9 @@
+/**
+ * Encrypts or decrypts a message using XOR encryption.
+ * @param {string} message - The message to be encrypted or decrypted.
+ * @param {string} cle - The encryption key.
+ * @returns {string} - The encrypted or decrypted message.
+ */
 function xor_crypt(message, cle) {
     var message_code = '';
     for (let i = 0; i < message.length; i++) {
@@ -26,6 +32,17 @@ function start() {
     let inputs = [bvElement, preteritElement, ppElement];
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener("keyup", inputChange)
+        inputs[i].addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                if (i+1 < inputs.length) {
+                    inputs[i+1].focus();
+                }
+                else {
+                    AskQuestion();
+                }
+            }
+        });
     }
 
     sendBnt.addEventListener("click", AskQuestion);
@@ -33,12 +50,34 @@ function start() {
 
 }
 
+
+function showResult() {
+    enddiv.style.display = "none";
+    resultdiv.style.display = "flex";
+
+    for (let i = 0; i < responses.length; i++) {
+        let div = document.createElement("div");
+        let span = document.createElement("span");
+
+        span.innerHTML = [xor_crypt(verbes[i][0], key), responses[i][0], responses[i][1], responses[i][2]].join(" ; ");
+
+        div.appendChild(span);
+
+        resultdiv.appendChild(div);
+    }
+}
+
+/**
+ * Handles the logic for asking a question and storing the user's responses.
+ */
 function AskQuestion() {
     responses.push([bvElement.value, preteritElement.value, ppElement.value]);
-    
+
     bvElement.value = "";
     preteritElement.value = "";
     ppElement.value = "";
+
+    bvElement.focus();
 
     currentQuestion += 1;
     if (currentQuestion < verbes.length) {
@@ -49,7 +88,7 @@ function AskQuestion() {
         testdiv.style.display = "none"
         enddiv.style.display = 'flex'
         console.log(responses)
-
+        seeResultsBtn.addEventListener("click", showResult)
     }
 }
 
@@ -57,6 +96,7 @@ function AskQuestion() {
 const startBtn = document.getElementById("start-btn");
 const verbeElement = document.getElementById("verbe-element");
 const sendBnt = document.getElementById("send-btn");
+const seeResultsBtn = document.getElementById("see-results-btn");
 
 const bvElement = document.getElementById("bv-element");
 const preteritElement = document.getElementById("preterit-element");
