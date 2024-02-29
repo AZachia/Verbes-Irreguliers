@@ -5,6 +5,7 @@ import random
 from urllib.parse import quote
 
 app = Flask(__name__)
+app.secret_key = "-CnBujsmbzU-Ed-wDmXIivgBIGoXuIinWyIVYSKA_Uc"
 
 # énumère tous les fichiers csv dans /verbes pour permettre à l'utilisateur de choisir son niveau
 fichiers_verbes = {}
@@ -12,8 +13,6 @@ for verbe_file in os.listdir("verbes"):
     if verbe_file.endswith(".csv"):
         print(verbe_file)
         fichiers_verbes[verbe_file.replace(".csv", "")] = csv().load_file("verbes/" + verbe_file)
-
-#mettre une assertion ici
         
 
 def choisir_questions(fichiercsv : csv, nb: int = 10) -> list:
@@ -78,6 +77,8 @@ def run(verbesfile):
         cle = generer_cle()
         verbes = choisir_questions(fichiers_verbes[verbesfile])
         verbes_crypted = str(crypt_talbe(verbes, cle))
+        session["cle"] = cle
+        session["verbes"] = verbes
         return render_template("test.html", verbes=verbes_crypted, key=cle)
     return redirect("/")
 
