@@ -7,15 +7,39 @@ function xor_crypt(message, cle) {
 }
 
 
+function inputChange() {
+    if (bvElement.value === "" && preteritElement.value === "" && ppElement.value === "") {
+        sendBnt.innerHTML = "Pass"
+    }
+    else {
+        sendBnt.innerHTML = "Send"
+    }
+}
+
+
 function start() {
     startdiv.style.display = "none"
     testdiv.style.display = "flex"
     verbe = xor_crypt(verbes[currentQuestion][0], key);
     verbeElement.innerHTML = verbe;
 
+    let inputs = [bvElement, preteritElement, ppElement];
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener("keyup", inputChange)
+    }
+
+    sendBnt.addEventListener("click", AskQuestion);
+
+
 }
 
 function AskQuestion() {
+    responses.push([bvElement.value, preteritElement.value, ppElement.value]);
+    
+    bvElement.value = "";
+    preteritElement.value = "";
+    ppElement.value = "";
+
     currentQuestion += 1;
     if (currentQuestion < verbes.length) {
         verbe = xor_crypt(verbes[currentQuestion][0], key);
@@ -24,6 +48,7 @@ function AskQuestion() {
     else {
         testdiv.style.display = "none"
         enddiv.style.display = 'flex'
+        console.log(responses)
 
     }
 }
@@ -44,6 +69,7 @@ const resultdiv = document.getElementById("result-div");
 
 
 var currentQuestion = 0;
+var responses = [];
+
 
 startBtn.addEventListener("click", start);
-sendBnt.addEventListener("click", AskQuestion);
