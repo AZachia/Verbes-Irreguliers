@@ -1,5 +1,5 @@
+import re
 from flask import Flask, render_template, jsonify, request, session, redirect, url_for, send_from_directory
-from pycsv import csv
 import os
 import random
 from urllib.parse import quote
@@ -7,18 +7,27 @@ from urllib.parse import quote
 app = Flask(__name__)
 app.secret_key = "-CnBujsmbzU-Ed-wDmXIivgBIGoXuIinWyIVYSKA_Uc"
 
+def csv_to_list(path: str, sep:str = ";") -> list:
+    """Convertit un fichier csv en liste"""
+    table = []
+    with open(path, "r", encoding="utf-8") as file:
+        for line in file.readlines():
+            if line != "":
+                table.append(line.replace("\n", "").split(sep))
+    return table
+
 # énumère tous les fichiers csv dans /verbes pour permettre à l'utilisateur de choisir son niveau
 fichiers_verbes = {}
 for verbe_file in os.listdir("verbes"):
     if verbe_file.endswith(".csv"):
         print(verbe_file)
-        fichiers_verbes[verbe_file.replace(".csv", "")] = csv().load_file("verbes/" + verbe_file)
+        fichiers_verbes[verbe_file.replace(".csv", "")] = csv_to_list("verbes/" + verbe_file)
         
 
-def choisir_questions(fichiercsv : csv, nb: int = 10) -> list:
+def choisir_questions(fichiercsv: list, nb: int = 10) -> list:
     questions = []
-    while len(questions) != nb or len(questions) == len(fichiercsv.table):
-        verbe = random.choice(fichiercsv.table)
+    while len(questions) != nb or len(questions) == len(fichiercsv):
+        verbe = random.choice(fichiercsv)
         if not verbe in questions:
             questions.append(verbe)
     return questions
