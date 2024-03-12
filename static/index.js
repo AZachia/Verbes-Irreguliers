@@ -110,7 +110,7 @@ function showResult() {
                 isCorrect = true;
             }
 
-            if ("/" in xor_crypt(verbes[i][j + 1], key)) {
+            if (xor_crypt(verbes[i][j + 1], key).includes("/")) {
                 let corrects = xor_crypt(verbes[i][j + 1], key).split("/");
                 if (corrects.includes(responses[i][j].toLowerCase())) {
                     isCorrect = true;

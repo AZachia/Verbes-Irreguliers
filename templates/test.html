@@ -8,13 +8,19 @@
     <link rel="shortcut icon" href="{{url_for('static', filename='GBFlag.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <script defer src="{{url_for('static', filename='index.js')}}"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
 </head>
 
 <body>
 
-    <style>.github-fork-ribbon:before { background-color: #333; }</style>
-    <a class="github-fork-ribbon" href="http://github.com/azachia" data-ribbon="Fork me on GitHub" title="Fork me on GitHub" target="_blank">Fork me on GitHub</a>
+    <style>
+        .github-fork-ribbon:before {
+            background-color: #333;
+        }
+    </style>
+    <a class="github-fork-ribbon" href="http://github.com/azachia" data-ribbon="Fork me on GitHub"
+        title="Fork me on GitHub" target="_blank">Fork me on GitHub</a>
 
     <header>
         <h1>Verbes irreguliers anglais</h1>
@@ -23,8 +29,10 @@
     <main>
 
         <div class="pannel" id="start-div">
-            <p>Welcome to the verb test! You will be given a verb in its base form. Your task is to fill in the correct forms of the
-                verb in the given fields. If a verb form has two possible forms, please enter only one. Click 'Start' to begin the
+            <p>Welcome to the verb test! You will be given a verb in its base form. Your task is to fill in the correct
+                forms of the
+                verb in the given fields. If a verb form has two possible forms, please enter only one. Click 'Start' to
+                begin the
                 test. Good luck!</p>
 
 
@@ -33,7 +41,10 @@
         </div>
 
         <div class="pannel" id="test-div" style="display: none;">
-            <span style="width: 49%;" id="timer">5:21</span><span style="width: 9%; text-align: right;" id="question-number">1/10</span>
+            <div style="display: flex; justify-content: space-between;">
+                <span id="timer">00:00</span>
+                <span id="question-number"></span>
+            </div>
             <h2 id="verbe-element">Verbe</h2>
             <table>
                 <tr>
@@ -66,7 +77,7 @@
             <a href="/">home</a>
 
             <table id="reponse-talbe">
-                
+
             </table>
 
             <h2 id="score-h2"></h2>
