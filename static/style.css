@@ -27,7 +27,7 @@ main div.pannel {
     font-size: large;
     text-align: center;
     justify-content: center;
-    gap: 20px;
+    gap: 2em;
     flex-direction: column;
     border-radius: 10px;
     padding: 50px 20px;
@@ -37,7 +37,7 @@ main div.pannel {
 
 main div.pannel .btn,
 main div.pannel button {
-    font-size: large;
+    font-size: medium;
     border-radius: 7px;
     padding: 10px;
     color: black;
