@@ -23,20 +23,28 @@ function inputChange() {
 }
 
 
-function updatetimer() {
-    var currentTime = Date.now();
-    var elapsedTime = currentTime - starttime;
+function FormatTime(time) {
 
-    var minutes = Math.floor(elapsedTime / 60000);
-    var seconds = Math.floor((elapsedTime % 60000) / 1000);
+    var minutes = Math.floor(time / 60000);
+    var seconds = Math.floor((time % 60000) / 1000);
 
     var formattedTime = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
-    timer.innerHTML = formattedTime;
-    
-    setTimeout(updatetimer, 500)
+    return formattedTime;
+}
 
-    
+
+function updatetimer() {
+    if (continueCountTime) {
+        var currentTime = Date.now();
+        var elapsedTime = currentTime - starttime;
+
+        timer.innerHTML = FormatTime(elapsedTime);
+
+        setTimeout(updatetimer, 500)
+    }
+
+
 }
 
 
@@ -55,11 +63,11 @@ function start() {
     let inputs = [bvElement, preteritElement, ppElement];
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener("keyup", inputChange)
-        inputs[i].addEventListener("keyup", function(event) {
+        inputs[i].addEventListener("keyup", function (event) {
             if (event.key === "Enter") {
                 event.preventDefault();
-                if (i+1 < inputs.length) {
-                    inputs[i+1].focus();
+                if (i + 1 < inputs.length) {
+                    inputs[i + 1].focus();
                 }
                 else {
                     AskQuestion();
@@ -77,8 +85,11 @@ function start() {
 function showResult() {
     enddiv.style.display = "none";
     resultdiv.style.display = "flex";
+    let EndTime = Date.now();
 
     let reponseTalbe = document.getElementById("reponse-talbe");
+    let resultDiv = document.getElementById("result-div");
+    var score = 0;
 
     for (let i = 0; i < responses.length; i++) {
         let tr = document.createElement("tr");
@@ -92,9 +103,10 @@ function showResult() {
         for (let j = 0; j < 3; j++) {
             let newtd = document.createElement("td");
             newtd.innerHTML = responses[i][j];
-            
-            if (responses[i][j].toLowerCase() === xor_crypt(verbes[i][j + 1], key).toLowerCase()) {
+
+            if (responses[i][j].toLowerCase() === xor_crypt(verbes[i][j + 1], key)) {
                 newtd.style.color = "#32CD32";
+                score += 1;
             }
             else {
                 newtd.style.color = "red";
@@ -111,6 +123,12 @@ function showResult() {
         }
         reponseTalbe.appendChild(tr);
     }
+
+    let scoreH2 = document.getElementById("score-h2");
+    scoreH2.innerHTML = "Votre score: " + score + " / " + verbes.length*3;
+
+    let timeP = document.getElementById("time-p");
+    timeP.innerHTML = "Votre temps: " + FormatTime(EndTime - starttime);
 
 }
 
@@ -160,7 +178,8 @@ const resultdiv = document.getElementById("result-div");
 const questionNumber = document.getElementById("question-number");
 const timer = document.getElementById("timer");
 
-let starttime = Date().now;
+var starttime = Date().now;
+var continueCountTime = true;
 
 
 var currentQuestion = 0;
