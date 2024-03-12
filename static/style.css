@@ -61,12 +61,28 @@ main div.pannel button:active {
     background-color: #4c40f9;
 }
 
+main div.pannel table {
+    border: none; /* Remove table border */
+}
+
 main div.pannel table tr td input {
     width: 90%;
 }
 
 #reponse-talbe {
     text-align: left;
+    border-collapse: collapse;
+}
+
+
+#reponse-talbe tr td {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+#reponse-talbe tr:hover{
+    background-color: #d8d7d7;
 }
 
 footer {

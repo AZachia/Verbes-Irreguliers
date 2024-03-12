@@ -94,9 +94,14 @@ function showResult() {
     for (let i = 0; i < responses.length; i++) {
         let tr = document.createElement("tr");
 
+
+        let rownumber = document.createElement("td");
+        rownumber.innerHTML = i + 1 + ".";
+        tr.appendChild(rownumber);
+
+
         let verbecase1 = document.createElement("td");
         verbecase1.innerHTML = xor_crypt(verbes[i][0], key);
-
         tr.appendChild(verbecase1);
 
 
