@@ -23,9 +23,9 @@ main {
 }
 
 main div.pannel {
-
     display: flex;
     text-align: center;
+    justify-content: center;
     gap: 20px;
     flex-direction: column;
     border-radius: 10px;
@@ -34,7 +34,7 @@ main div.pannel {
     background-color: #FFF;
 }
 
-main div.pannel a {
+main div.pannel a.btn {
     border-radius: 7px;
     padding: 10px;
     color: black;
@@ -44,7 +44,7 @@ main div.pannel a {
     transition: 50ms ease-in-out;
 }
 
-main div.pannel a:hover {
+main div.pannel a.btn:hover {
     background-color: #4c40f9;
     color: white;
 }
