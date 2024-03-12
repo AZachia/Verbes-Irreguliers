@@ -24,6 +24,7 @@ main {
 
 main div.pannel {
     display: flex;
+    font-size: large;
     text-align: center;
     justify-content: center;
     gap: 20px;
@@ -36,6 +37,7 @@ main div.pannel {
 
 main div.pannel .btn,
 main div.pannel button {
+    font-size: large;
     border-radius: 7px;
     padding: 10px;
     color: black;
@@ -44,18 +46,20 @@ main div.pannel button {
     box-shadow: 0 0 5px #e0e0e0;
     transition: 50ms ease-in-out;
     border: none;
+    outline: 2px solid #8178fe;
 }
 
 main div.pannel .btn:hover,
 main div.pannel button:hover {
-    background-color: #f4f4f4;
+    background-color: #8178fe;
+    color: white;
 }
 
 main div.pannel .btn:active,
 main div.pannel button:active {
     transition: 0;
-    background-color: #8178fe;
-    color: white;
+    outline: 2px solid #4c40f9;
+    background-color: #4c40f9;
 }
 
 main div.pannel table tr td input {
