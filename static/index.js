@@ -23,11 +23,32 @@ function inputChange() {
 }
 
 
+function updatetimer() {
+    var currentTime = Date.now();
+    var elapsedTime = currentTime - starttime;
+
+    var minutes = Math.floor(elapsedTime / 60000);
+    var seconds = Math.floor((elapsedTime % 60000) / 1000);
+
+    var formattedTime = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+    timer.innerHTML = formattedTime;
+    
+    setTimeout(updatetimer, 500)
+
+    
+}
+
+
 function start() {
-    startdiv.style.display = "none"
-    testdiv.style.display = "flex"
+    startdiv.style.display = "none";
+    testdiv.style.display = "flex";
     verbe = xor_crypt(verbes[currentQuestion][0], key);
     verbeElement.innerHTML = verbe;
+
+    starttime = Date.now();
+    timer.innerHTML = "00:00";
+    updatetimer();
 
     questionNumber.innerHTML = "Question " + (currentQuestion + 1) + " / " + verbes.length;
 
@@ -77,7 +98,10 @@ function showResult() {
             }
             else {
                 newtd.style.color = "red";
-                newtd.innerHTML += " (" + xor_crypt(verbes[i][j + 1], key) + ")";
+                let responsespan = document.createElement("span");
+                responsespan.innerHTML += " (" + xor_crypt(verbes[i][j + 1], key) + ")";
+                responsespan.style.color = "black";
+                newtd.appendChild(responsespan)
             }
 
             tr.appendChild(newtd);
@@ -134,6 +158,9 @@ const enddiv = document.getElementById("end-div");
 const resultdiv = document.getElementById("result-div");
 
 const questionNumber = document.getElementById("question-number");
+const timer = document.getElementById("timer");
+
+let starttime = Date().now;
 
 
 var currentQuestion = 0;
