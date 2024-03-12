@@ -104,7 +104,20 @@ function showResult() {
             let newtd = document.createElement("td");
             newtd.innerHTML = responses[i][j];
 
-            if (responses[i][j].toLowerCase() === xor_crypt(verbes[i][j + 1], key)) {
+            let isCorrect = false;
+
+            if (responses[i][j].toLowerCase() === xor_crypt(verbes[i][j + 1], key).toLocaleLowerCase()) {
+                isCorrect = true;
+            }
+
+            if ("/" in xor_crypt(verbes[i][j + 1], key)) {
+                let corrects = xor_crypt(verbes[i][j + 1], key).split("/");
+                if (corrects.includes(responses[i][j].toLowerCase())) {
+                    isCorrect = true;
+                }
+            }
+
+            if (isCorrect) {
                 newtd.style.color = "#32CD32";
                 score += 1;
             }
