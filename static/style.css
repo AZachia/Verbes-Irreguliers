@@ -23,7 +23,7 @@ main {
 }
 
 main div.pannel {
-    display:flex;
+    display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
@@ -34,8 +34,15 @@ main div.pannel {
     box-shadow: 0 0 50px #e0e0e0;
     background-color: #FFF;
 }
-.small {max-width: 250px;}
-.big {min-height: 20px;}
+
+.small {
+    max-width: 250px;
+}
+
+.big {
+    min-height: 20px;
+}
+
 main div.pannel .btn,
 main div.pannel button {
     font-size: medium;
@@ -62,7 +69,8 @@ main div.pannel button:active {
 }
 
 main div.pannel table {
-    border: none; /* Remove table border */
+    border: none;
+    /* Remove table border */
 }
 
 main div.pannel table tr td input {
@@ -81,7 +89,7 @@ main div.pannel table tr td input {
 }
 
 
-#reponse-talbe tr:hover{
+#reponse-talbe tr:hover {
     background-color: #d8d7d7;
 }
 
@@ -90,4 +98,16 @@ footer {
     background-color: #362ea4;
     padding: 50px 10px;
     color: aliceblue;
+}
+
+
+
+@media (max-width: 768px) {
+    main {
+        padding: 0px;
+    }
+
+    main div.pannel {
+        padding: 5px;
+    }
 }
