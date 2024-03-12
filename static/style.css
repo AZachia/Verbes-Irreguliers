@@ -23,18 +23,19 @@ main {
 }
 
 main div.pannel {
-    display: flex;
-    font-size: large;
+    display:flex;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
+    font-size: large;
     gap: 2em;
-    flex-direction: column;
     border-radius: 10px;
-    padding: 50px 20px;
+    padding: 60px;
     box-shadow: 0 0 50px #e0e0e0;
     background-color: #FFF;
 }
-
+.small {max-width: 250px;}
+.big {min-height: 20px;}
 main div.pannel .btn,
 main div.pannel button {
     font-size: medium;
@@ -42,11 +43,10 @@ main div.pannel button {
     padding: 10px;
     color: black;
     text-decoration: none;
-    background-color: #FFF;
+    background-color: #98b3ff;
     box-shadow: 0 0 5px #e0e0e0;
     transition: 50ms ease-in-out;
     border: none;
-    outline: 2px solid #8178fe;
 }
 
 main div.pannel .btn:hover,
@@ -58,7 +58,6 @@ main div.pannel button:hover {
 main div.pannel .btn:active,
 main div.pannel button:active {
     transition: 0;
-    outline: 2px solid #4c40f9;
     background-color: #4c40f9;
 }
 
@@ -66,6 +65,9 @@ main div.pannel table tr td input {
     width: 90%;
 }
 
+table {
+    text-align: left;
+}
 
 footer {
     padding: 10px;

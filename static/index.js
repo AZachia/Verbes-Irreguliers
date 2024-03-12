@@ -93,7 +93,7 @@ function showResult() {
             let newtd = document.createElement("td");
             newtd.innerHTML = responses[i][j];
             
-            if (responses[i][j].toLowerCase() === xor_crypt(verbes[i][j + 1], key)) {
+            if (responses[i][j].toLowerCase() === xor_crypt(verbes[i][j + 1], key).toLowerCase()) {
                 newtd.style.color = "#32CD32";
             }
             else {
