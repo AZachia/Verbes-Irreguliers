@@ -57,16 +57,37 @@ function showResult() {
     enddiv.style.display = "none";
     resultdiv.style.display = "flex";
 
+    let reponseTalbe = document.getElementById("reponse-talbe");
+
     for (let i = 0; i < responses.length; i++) {
-        let div = document.createElement("div");
-        let span = document.createElement("span");
+        let tr = document.createElement("tr");
 
-        span.innerHTML = [xor_crypt(verbes[i][0], key), responses[i][0], responses[i][1], responses[i][2]].join(" ; ");
+        let verbecase1 = document.createElement("td");
+        verbecase1.innerHTML = xor_crypt(verbes[i][0], key);
 
-        div.appendChild(span);
+        tr.appendChild(verbecase1);
 
-        resultdiv.appendChild(div);
+
+        for (let j = 0; j < 3; j++) {
+            let newtd = document.createElement("td");
+            newtd.innerHTML = responses[i][j];
+            
+            if (responses[i][j].toLowerCase() === xor_crypt(verbes[i][j + 1], key)) {
+                newtd.style.color = "green";
+            }
+            else {
+                newtd.style.color = "red";
+                newtd.innerHTML += " (" + xor_crypt(verbes[i][j + 1], key) + ")";
+            }
+
+            tr.appendChild(newtd);
+
+
+
+        }
+        reponseTalbe.appendChild(tr);
     }
+
 }
 
 /**
