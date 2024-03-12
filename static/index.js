@@ -91,8 +91,27 @@ function showResult() {
     let resultDiv = document.getElementById("result-div");
     var score = 0;
 
+    let messages = []
+
     for (let i = 0; i < responses.length; i++) {
         let tr = document.createElement("tr");
+
+
+        if ('speechSynthesis' in window) {
+            var msg = new SpeechSynthesisUtterance(xor_crypt(verbes[i][1], key) + " " + xor_crypt(verbes[i][2], key) + " " + xor_crypt(verbes[i][3], key));
+            msg.lang = "en-US";
+
+            messages.push(msg);
+
+            let speakBtn = document.createElement("button");
+            speakBtn.innerHTML = "Speak";
+            speakBtn.addEventListener("click", function () {
+                window.speechSynthesis.speak(messages[i]);
+            });
+
+            tr.appendChild(speakBtn);
+
+        }
 
 
         let rownumber = document.createElement("td");
