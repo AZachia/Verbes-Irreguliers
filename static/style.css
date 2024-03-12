@@ -34,7 +34,8 @@ main div.pannel {
     background-color: #FFF;
 }
 
-main div.pannel a.btn {
+main div.pannel .btn,
+main div.pannel button {
     border-radius: 7px;
     padding: 10px;
     color: black;
@@ -42,10 +43,18 @@ main div.pannel a.btn {
     background-color: #FFF;
     box-shadow: 0 0 5px #e0e0e0;
     transition: 50ms ease-in-out;
+    border: none;
 }
 
-main div.pannel a.btn:hover {
-    background-color: #4c40f9;
+main div.pannel .btn:hover,
+main div.pannel button:hover {
+    background-color: #f4f4f4;
+}
+
+main div.pannel .btn:active,
+main div.pannel button:active {
+    transition: 0;
+    background-color: #8178fe;
     color: white;
 }
 
