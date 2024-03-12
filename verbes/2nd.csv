@@ -4,9 +4,9 @@ battre;beat;beat;beaten
 devenir;become;became;become
 commencer;begin;began;begun
 courber;bend;bent;bent
-parier;bet;bet/betted (US);bet/betted (US)
+parier;bet;bet/betted;bet/betted
 faire une enchère;bid;bid;bid
-ordonner;bid;bade/bid (US);bid/bidden
+ordonner;bid;bade/bid;bid/bidden
 mordre;bite;bit;bitten
 saigner;bleed;bled;bled
 souffler;blow;blew;blown
@@ -42,11 +42,11 @@ trouver;find;found;found
 fuir;flee;fled;fled
 lancer;fling;flung;flung
 voler (mouvement);fly;flew;flown
-interdire;forbid;forbad/forbade (US);forbidden
+interdire;forbid;forbad/forbade;forbidden
 oublier;forget;forgot;forgotten
 pardonner;forgive;forgave;forgiven
 geler;freeze;froze;frozen
-obtenir;get;got;got/gotten (US)
+obtenir;get;got;got/gotten
 donner;give;gave;given
 aller;go;went;gone
 moudre;grind;ground;ground
@@ -57,7 +57,7 @@ frapper;hit;hit;hit
 tenir;hold;held;held
 blesser;hurt;hurt;hurt
 garder;keep;kept;kept
-s'agenouiller;kneel;knelt/kneeled (US);knelt/kneeled (US)
+s'agenouiller;kneel;knelt/kneeled;knelt/kneeled
 connaître;know;knew;known
 poser (à plat);lay;laid;laid
 mener;lead;led;led
@@ -72,7 +72,7 @@ laisser;let;let;let
 perdre;lose;lost;lost
 faire;make;made;made
 signifier;mean;meant;meant
-tondre;mow;mowed;mown/mowed (US)
+tondre;mow;mowed;mown/mowed
 payer;pay;paid;paid
 mettre;put;put;put
 arrêter;quit;quit/quitted;quit/quitted
@@ -94,7 +94,7 @@ verser;shed;shed;shed
 briller;shine;shone;shone
 tirer (arme);shoot;shot;shot
 monter;show;showed;shown
-rétrécir;shrink;shrank /shrunk (US);shrunk
+rétrécir;shrink;shrank /shrunk;shrunk
 fermer;shut;shut;shut
 chanter;sing;sang;sung
 couler (bateau);sink;sank;sunk
