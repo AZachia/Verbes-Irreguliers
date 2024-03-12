@@ -94,7 +94,7 @@ function showResult() {
             newtd.innerHTML = responses[i][j];
             
             if (responses[i][j].toLowerCase() === xor_crypt(verbes[i][j + 1], key)) {
-                newtd.style.color = "green";
+                newtd.style.color = "#32CD32";
             }
             else {
                 newtd.style.color = "red";
