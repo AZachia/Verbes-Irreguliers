@@ -79,7 +79,6 @@ function start() {
 function showResult() {
     enddiv.style.display = "none";
     resultdiv.style.display = "flex";
-    let EndTime = Date.now();
 
     let reponseTalbe = document.getElementById("reponse-talbe");
     let resultDiv = document.getElementById("result-div");
@@ -189,9 +188,11 @@ function AskQuestion() {
         bvElement.focus();
     }
     else {
+        EndTime = Date.now();
         testdiv.style.display = "none"
         enddiv.style.display = 'flex'
         console.log(responses)
+        seeResultsBtn.focus();
         seeResultsBtn.addEventListener("click", showResult)
     }
 }
@@ -220,6 +221,8 @@ var continueCountTime = true;
 
 var currentQuestion = 0;
 var responses = [];
+
+let EndTime = 0;
 
 
 startBtn.addEventListener("click", start);

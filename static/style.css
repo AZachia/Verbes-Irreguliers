@@ -122,7 +122,11 @@ main div.pannel table tr td input {
 }
 
 
+.material-symbols-outlined {
+    user-select: none;
+    height: 1em;
 
+}
 
 .speak-button {
     border-radius: 100% !important;
