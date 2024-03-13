@@ -43,6 +43,28 @@ main div.pannel {
     min-height: 20px;
 }
 
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 0 0 5px #e0e0e0;
+    transition: 50ms;
+    outline: 2px solid black;
+    font-size: large;
+
+}
+
+input[type="text"]:focus {
+    outline: 3px solid #4c40f9;
+}
+
+input[type="text"]:not(:focus) {
+    color: rgb(81, 81, 81);
+
+}
+
 main div.pannel .btn,
 main div.pannel button {
     font-size: medium;
@@ -77,9 +99,14 @@ main div.pannel table tr td input {
     width: 90%;
 }
 
+#result-div {
+    overflow-x: scroll;
+}
+
 #reponse-talbe {
     text-align: left;
     border-collapse: collapse;
+    overflow-x: scroll;
 }
 
 
@@ -91,6 +118,19 @@ main div.pannel table tr td input {
 
 #reponse-talbe tr:hover {
     background-color: #d8d7d7;
+}
+
+
+
+
+.speak-button {
+    border-radius: 100% !important;
+    background-color: #cccccc !important;
+    aspect-ratio: 1/1 !important;
+}
+
+.speak-button:hover {
+    background-color: #b3b3b3 !important;
 }
 
 footer {
