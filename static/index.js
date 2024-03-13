@@ -132,7 +132,8 @@ function showResult() {
 
         for (let j = 0; j < 3; j++) {
             let newtd = document.createElement("td");
-            newtd.innerHTML = responses[i][j];
+            let textcontent = responses[i][j] === "" ? '<span class="material-symbols-outlined">cancel</span>' : responses[i][j];
+            newtd.innerHTML = textcontent;
 
             let isCorrect = false;
 

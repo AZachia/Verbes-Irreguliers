@@ -65,6 +65,7 @@ input[type="text"]:not(:focus) {
 
 }
 
+
 main div.pannel .btn,
 main div.pannel button {
     font-size: medium;
@@ -117,7 +118,7 @@ main div.pannel table tr td input {
 
 
 #reponse-talbe tr:hover {
-    background-color: #d8d7d7;
+    background-color: #e6e5e5;
 }
 
 
