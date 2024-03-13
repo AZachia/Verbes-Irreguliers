@@ -1,9 +1,3 @@
-/**
- * Encrypts or decrypts a message using XOR encryption.
- * @param {string} message - The message to be encrypted or decrypted.
- * @param {string} cle - The encryption key.
- * @returns {string} - The encrypted or decrypted message.
- */
 function xor_crypt(message, cle) {
     var message_code = '';
     for (let i = 0; i < message.length; i++) {
@@ -176,9 +170,6 @@ function showResult() {
 
 }
 
-/**
- * Handles the logic for asking a question and storing the user's responses.
- */
 function AskQuestion() {
     responses.push([bvElement.value, preteritElement.value, ppElement.value]);
 
@@ -195,6 +186,7 @@ function AskQuestion() {
     if (currentQuestion < verbes.length) {
         verbe = xor_crypt(verbes[currentQuestion][0], key);
         verbeElement.innerHTML = verbe;
+        bvElement.focus();
     }
     else {
         testdiv.style.display = "none"
