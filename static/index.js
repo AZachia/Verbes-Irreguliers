@@ -98,13 +98,19 @@ function showResult() {
 
 
         if ('speechSynthesis' in window) {
-            var msg = new SpeechSynthesisUtterance(xor_crypt(verbes[i][1], key) + " " + xor_crypt(verbes[i][2], key) + " " + xor_crypt(verbes[i][3], key));
+            let textmessage = "";
+            for (let j = 0; j < 3; j++) {
+                textmessage += xor_crypt(verbes[i][j + 1], key).split("/")[0] + " ";
+            }
+            var msg = new SpeechSynthesisUtterance(textmessage);
             msg.lang = "en-US";
+            msg.rate = 0.6;
 
             messages.push(msg);
 
             let speakBtn = document.createElement("button");
-            speakBtn.innerHTML = "Speak";
+            speakBtn.innerHTML = "<span class='material-symbols-outlined'>hearing</span> ";
+            speakBtn.classList.add("speak-button")
             speakBtn.addEventListener("click", function () {
                 window.speechSynthesis.speak(messages[i]);
             });
