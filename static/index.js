@@ -31,14 +31,20 @@ function FormatTime(time) {
 function updatetimer() {
     if (continueCountTime) {
         var currentTime = Date.now();
-        var elapsedTime = currentTime - starttime;
-
-        timer.innerHTML = FormatTime(elapsedTime);
-
+        timer.innerHTML = FormatTime(currentTime - starttime);
         setTimeout(updatetimer, 500)
     }
 
 
+}
+
+
+function CheatDetected(event) {
+    if (!(document.visibilityState == "visible")) {
+        let cheatdiv = document.getElementById("cheat-detected");
+        testdiv.style.display = "none";
+        cheatdiv.style.display = "flex";
+    }
 }
 
 
@@ -69,6 +75,9 @@ function start() {
             }
         });
     }
+
+
+    document.addEventListener("visibilitychange", CheatDetected);
 
     sendBnt.addEventListener("click", AskQuestion);
 
@@ -191,9 +200,10 @@ function AskQuestion() {
         EndTime = Date.now();
         testdiv.style.display = "none"
         enddiv.style.display = 'flex'
-        console.log(responses)
+        console.log(responses);
         seeResultsBtn.focus();
-        seeResultsBtn.addEventListener("click", showResult)
+        document.removeEventListener("visibilitychange", CheatDetected);
+        seeResultsBtn.addEventListener("click", showResult);
     }
 }
 
