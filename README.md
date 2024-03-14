@@ -39,6 +39,14 @@ Voici l'organisation du code:
 
  - Les ressources web (images, css, js...) sont stockés dans le dossier `static`.
 
+
+```mermaid
+
+server->client:hello world;
+client->server:hi!;
+
+```
+
 L'utilisateur chosit le niveau (le fichier de verbe a utiliser) et est redirigé vers la page web correspondant.
 
 
