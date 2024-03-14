@@ -42,8 +42,8 @@ Voici l'organisation du code:
 
 ```mermaid
 
-server->client:hello world;
-client->server:hi!;
+server->client;
+client->server;
 
 ```
 
