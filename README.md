@@ -42,9 +42,12 @@ Voici l'organisation du code:
 
 ```mermaid
 
-graph TD;
-    server-->client;
-    client-->server;
+sequenceDiagram
+    Verbes ->> Serveur:Charge les verbes;
+    Client ->> Serveur: choisi le niveau ;
+    NOTE OVER Serveur: choisis les verbes;
+    Serveur ->> Client: envoye les verbes;
+    NOTE OVER Client: passe le test;
 
 ```
 
