@@ -56,28 +56,11 @@ def crypt_talbe(table: list[list[str]], key = str):
         new_table.append(new_line)
     
     return new_table
-    
-### Fonctions Internes au programme
-
-@app.route("/internal/select-file")
-def select_file():
-    """selectionne le fichier à utiliser pour questionner les verbes irréguliers"""
-    file = request.args.get('file')
-    
-
-@app.route("/src/<path:path>")
-def style(path):
-    return send_from_directory('static', path)
-
-
-
-@app.route("/index.js")
-def index_js():
-    return send_from_directory('templates', 'index.js')
-
-
 
 ### Fonctions publiques
+@app.errorhandler(404)
+def not_found(err):
+    return render_template("404.html")
 
 @app.route("/test/<verbesfile>")
 def run(verbesfile):
@@ -99,6 +82,7 @@ def run(verbesfile):
 @app.route("/home")
 def index():
     return render_template("index.html", levels = fichiers_verbes)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
