@@ -1,6 +1,6 @@
 # Verbes-Irrélguliers
 
-<img src="https://skillicons.dev/icons?i=py,js,html,css&perline=12" />
+<img src="https://skillicons.dev/icons?i=py,flask,js,html,css&perline=12">
 
 **Site web qui permet d'interoger un utilisateur sur 10 verbes irréguliers.**
 
@@ -13,7 +13,7 @@
 Pour installer l'application sur votre machine, il suffit de telecharger en zip le code, installer la librairie de serveur python Flask dans le terminal avec la commande `pip install Flask`.
 Pour démarer le serveur, il faut executer lancer le fichier `server.py`. Pour voir le site, rendez vous a l'adresse [27.0.0.1:5000](27.0.0.1:5000) dans votre navigateur.
 
-Sinon, vous pouvez utiliser l'application directement dans voter navigateur en vous rendant a l'adresse **[verbes-irrelguliers.vercel.app ↗️](https://verbes-irrelguliers.vercel.app/)**
+Sinon, vous pouvez utiliser l'application directement dans voter navigateur en vous rendant a l'adresse **<a href="https://verbes-irrelguliers.vercel.app/" target="_blank">verbes-irrelguliers.vercel.app ↗️</a>**
 
 
 # Fonctionement
@@ -43,5 +43,11 @@ devient:
 ```js
 ["\u0013¤\u0005''\u0006\u0016R", "\u0012=\u0007#(\u0006", "\u0012=\u0007#(\u0006", "\u0012=\u0007#(\u0006"]
 ```
+
+## Les verbes qui ont plusieurs formes
+
+Certains verbes peuvent s'ecrire de  différantes façons, comme par example be: was/where ou dream: dreamt/dreamed
+
+Pour permetre a l'utilisateur de valider la réponse si un des 2 est rentré, nous avons du ajouter un systeme de conditions pour verifier la précence du caratère séparateur dans la réponse ("/"), de faire une liste de réponses valides a partire de la réponce initiale et finalement de vérifier si la réponce de l'utilisateur est présente dans cette nouvelle liste. 
 
 
