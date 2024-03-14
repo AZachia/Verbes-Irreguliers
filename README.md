@@ -2,42 +2,42 @@
 
 <img src="https://skillicons.dev/icons?i=py,flask,js,html,css&perline=12">
 
-**Site web qui permet d'interoger un utilisateur sur 10 verbes irréguliers.**
+**Site web qui permet d'interroger un utilisateur sur 10 verbes irréguliers.**
 
 
 ![](./assets/image.png)
 
 
-# 🛠️ Instalation
+# 🛠️ Installation
 
-Pour installer l'application sur votre machine, il suffit de telecharger en zip le code, installer la librairie de serveur python Flask dans le terminal avec la commande `pip install Flask`.
-Pour démarer le serveur, il faut executer lancer le fichier `server.py`. Pour voir le site, rendez vous a l'adresse [127.0.0.1:5000](127.0.0.1:5000) dans votre navigateur.
+Pour installer l'application sur votre machine, il suffit de télécharger en zip le code, d'installer la librairie de serveur python Flask dans le terminal avec la commande `pip install Flask`.
+Pour démarrer le serveur, il faut exécuter le fichier `server.py`. Pour voir le site, rendez-vous à l'adresse [127.0.0.1:5000](127.0.0.1:5000) dans votre navigateur.
 
-Sinon, vous pouvez utiliser l'application directement dans voter navigateur en vous rendant a l'adresse **[verbes-irrelguliers.vercel.app ↗️](https://verbes-irrelguliers.vercel.app/)**
+Sinon, vous pouvez utiliser l'application directement dans votre navigateur en vous rendant à l'adresse **[verbes-irreguliers.vercel.app ↗️](https://verbes-irreguliers.vercel.app/)**
 
 
 # 🎯 Objectifs
 
-Nous avons voulue faire le projet sous forme de site internet pour avoir une interface utilisateur agréable et très facile d'utilisation, qui requière très peu de connaisances en informatique. Au contraire, le terminal est plus complexe a utiliser et a manipuler.
+Nous avons voulu faire le projet sous forme de site internet pour avoir une interface utilisateur agréable et très facile d'utilisation, qui requiert très peu de connaissances en informatique. Au contraire, le terminal est plus complexe à utiliser et à manipuler.
 
-Se choix a aussi un but de facilité, car pour utiliser notre projet, il suffit de se rendre sur le site internet, il n'y a donc pas besoin de l'installer, d'avoir deja python d'intallé sur la machine, de l'executer...
+Ce choix a aussi un but de facilité, car pour utiliser notre projet, il suffit de se rendre sur le site internet, il n'y a donc pas besoin de l'installer, d'avoir déjà python installé sur la machine, de l'exécuter...
 
-Une interface web permet aussi de garder les listes des verbes du coté serveur et éviter que l'utilisateur y ai accès.
+Une interface web permet aussi de garder les listes des verbes du côté serveur et éviter que l'utilisateur y ait accès.
 
-Afin d'aider à apprendre les verbes, nous avons ajouté une fonctionnalitée qui permet de lire a voix haute les verbes en anglais. Cela permet d'apprendre la pronionciation et permet de mieux les retenir. Cette fonctionnalité repose sur la [Web Speech API](https://developer.mozilla.org/fr/docs/Web/API/Web_Speech_API) presente dans les principaux navigateurs, compatible avec la majoritée de ceux-ci.
+Afin d'aider à apprendre les verbes, nous avons ajouté une fonctionnalité qui permet de lire à voix haute les verbes en anglais. Cela permet d'apprendre la prononciation et permet de mieux les retenir. Cette fonctionnalité repose sur la [Web Speech API](https://developer.mozilla.org/fr/docs/Web/API/Web_Speech_API) présente dans les principaux navigateurs, compatible avec la majorité de ceux-ci.
 
 
 # ⚙️ Fonctionement
 
-Utilise un serveur en python reposant sur la libraire Flask, et sur du javascript pour le coté client.
+Utilise un serveur en python reposant sur la librairie Flask, et sur du javascript pour le côté client.
 
 Voici l'organisation du code:
 
- - Les verbes irréguliers sont stockées dans des fichiers `csv` dans le dossier `verbes`.
+ - Les verbes irréguliers sont stockés dans des fichiers `csv` dans le dossier `verbes`.
 
  - Les pages html sont stockées dans le dossier `templates`.
 
- - Les ressources web (images, css, js...) sont stockés dans le dossier `static`.
+ - Les ressources web (images, css, js...) sont stockées dans le dossier `static`.
 
 
 ```mermaid
@@ -57,15 +57,15 @@ L'utilisateur chosit le niveau (le fichier de verbe a utiliser) et est redirigé
 # 💡 Problèmes rencontrés
 
 ## Protection des réponses
-Quand la liste de verbe est envoyée au client pour faire le teste, elle aparait clairement dans le code source de la page, il était donc très facile de tricher et de s'en servir.
+Quand la liste de verbes est envoyée au client pour faire le test, elle apparaît clairement dans le code source de la page, il était donc très facile de tricher et de s'en servir.
 
-Pour regler le problème, nous avons décidé de crypter les réponces envoyées et de les décrypter quand le programme a besoin de les utiliser. 
+Pour régler le problème, nous avons décidé de crypter les réponses envoyées et de les décrypter quand le programme a besoin de les utiliser. 
 
-Nous avons donc utilisé la technique de cryptage `Xor`, qui a été implementée sur le serveur en python pour le cryptage des réponses et en javascript du coté client pour les décrypter.
+Nous avons donc utilisé la technique de cryptage `Xor`, qui a été implémentée sur le serveur en python pour le cryptage des réponses et en javascript du côté client pour les décrypter.
 
-Nous n'avons pas dirrectement décrypter la lsite en entier du coté client car sinon elle aurait dirrectement été accesible via la console javascript du navigateur.
+Nous n'avons pas directement décrypté la liste en entier du côté client car sinon elle aurait directement été accessible via la console javascript du navigateur.
 
-Voici un morceau liste avant/après enctyption:
+Voici un morceau de liste avant/après encryption:
 
 
 ```js
