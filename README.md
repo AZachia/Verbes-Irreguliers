@@ -42,8 +42,9 @@ Voici l'organisation du code:
 
 ```mermaid
 
-server-->client;
-client-->server;
+graph TD;
+    server-->client;
+    client-->server;
 
 ```
 
