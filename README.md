@@ -11,7 +11,7 @@
 # 🛠️ Instalation
 
 Pour installer l'application sur votre machine, il suffit de telecharger en zip le code, installer la librairie de serveur python Flask dans le terminal avec la commande `pip install Flask`.
-Pour démarer le serveur, il faut executer lancer le fichier `server.py`. Pour voir le site, rendez vous a l'adresse [27.0.0.1:5000](27.0.0.1:5000) dans votre navigateur.
+Pour démarer le serveur, il faut executer lancer le fichier `server.py`. Pour voir le site, rendez vous a l'adresse [27.0.0.1:5000](localhost:5000) dans votre navigateur.
 
 Sinon, vous pouvez utiliser l'application directement dans voter navigateur en vous rendant a l'adresse **<a href="https://verbes-irrelguliers.vercel.app/" target="_blank">verbes-irrelguliers.vercel.app ↗️</a>**
 
