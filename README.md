@@ -24,10 +24,23 @@ Se choix a aussi un but de facilité, car pour utiliser notre projet, il suffit 
 
 Une interface web permet aussi de garder les listes des verbes du coté serveur et éviter que l'utilisateur y ai accès.
 
+Afin d'aider à apprendre les verbes, nous avons ajouté une fonctionnalitée qui permet de lire a voix haute les verbes en anglais. Cela permet d'apprendre la pronionciation et permet de mieux les retenir. Cette fonctionnalité repose sur la [Web Speech API](https://developer.mozilla.org/fr/docs/Web/API/Web_Speech_API) presente dans les principaux navigateurs, compatible avec la majoritée de ceux-ci.
+
 
 # ⚙️ Fonctionement
 
 Utilise un serveur en python reposant sur la libraire Flask, et sur du javascript pour le coté client.
+
+Voici l'organisation du code:
+
+ - Les verbes irréguliers sont stockées dans des fichiers `csv` dans le dossier `verbes`.
+
+ - Les pages html sont stockées dans le dossier `templates`.
+
+ - Les ressources web (images, css, js...) sont stockés dans le dossier `static`.
+
+L'utilisateur chosit le niveau (le fichier de verbe a utiliser) et est redirigé vers la page web correspondant.
+
 
 # 💡 Problèmes rencontrés
 
