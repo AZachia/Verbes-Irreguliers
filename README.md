@@ -16,7 +16,7 @@ Pour démarer le serveur, il faut executer lancer le fichier `server.py`. Pour v
 Sinon, vous pouvez utiliser l'application directement dans voter navigateur en vous rendant a l'adresse **<a href="https://verbes-irrelguliers.vercel.app/" target="_blank">verbes-irrelguliers.vercel.app ↗️</a>**
 
 
-# Objectifs
+# 🎯 Objectifs
 
 Nous avons voulue faire le projet sous forme de site internet pour avoir une interface utilisateur agréable et très facile d'utilisation, qui requière très peu de connaisances en informatique. Au contraire, le terminal est plus complexe a utiliser et a manipuler.
 
