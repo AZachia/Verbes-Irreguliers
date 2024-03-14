@@ -22,8 +22,10 @@ Nous avons voulue faire le projet sous forme de site internet pour avoir une int
 
 Se choix a aussi un but de facilité, car pour utiliser notre projet, il suffit de se rendre sur le site internet, il n'y a donc pas besoin de l'installer, d'avoir deja python d'intallé sur la machine, de l'executer...
 
+Une interface web permet aussi de garder les listes des verbes du coté serveur et éviter que l'utilisateur y ai accès.
 
-# Fonctionement
+
+# ⚙️ Fonctionement
 
 Utilise un serveur en python reposant sur la libraire Flask, et sur du javascript pour le coté client.
 
