@@ -1,10 +1,10 @@
 * {
     margin: 0;
-    /* outline: red 1px solid; */
 }
 
 body {
     font-family: sans-serif;
+    background-color: #f4f4f4;
     overflow-x: hidden;
 }
 
@@ -18,8 +18,34 @@ header {
 
 
 main {
-    background-color: #f4f4f4;
     padding: 50px 15%;
+}
+
+
+.small {
+    max-width: 250px;
+}
+.big {
+    min-height: 50px;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    box-shadow: 0 0 5px #e0e0e0;
+    transition: 50ms;
+    outline: 2px solid black;
+    font-size: large;
+}
+input[type="text"]:focus {
+    outline: 3px solid #4c40f9;
+}
+input[type="text"]:not(:focus) {
+    color: rgb(81, 81, 81);
+
 }
 
 main div.pannel {
@@ -34,37 +60,6 @@ main div.pannel {
     box-shadow: 0 0 50px #e0e0e0;
     background-color: #FFF;
 }
-
-.small {
-    max-width: 250px;
-}
-
-.big {
-    min-height: 20px;
-}
-
-
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 7px;
-    border: none;
-    box-shadow: 0 0 5px #e0e0e0;
-    transition: 50ms;
-    outline: 2px solid black;
-    font-size: large;
-
-}
-
-input[type="text"]:focus {
-    outline: 3px solid #4c40f9;
-}
-
-input[type="text"]:not(:focus) {
-    color: rgb(81, 81, 81);
-
-}
-
 
 main div.pannel .btn,
 main div.pannel button {
@@ -84,7 +79,6 @@ main div.pannel button:hover {
     background-color: #8178fe;
     color: white;
 }
-
 main div.pannel .btn:active,
 main div.pannel button:active {
     transition: 0;
@@ -95,7 +89,6 @@ main div.pannel table {
     border: none;
     /* Remove table border */
 }
-
 main div.pannel table tr td input {
     width: 90%;
 }
@@ -109,14 +102,10 @@ main div.pannel table tr td input {
     border-collapse: collapse;
     overflow-x: scroll;
 }
-
-
 #reponse-talbe tr td {
     padding: 10px;
     border-bottom: 1px solid #e0e0e0;
 }
-
-
 #reponse-talbe tr:hover {
     background-color: #e6e5e5;
 }
@@ -144,8 +133,14 @@ footer {
     padding: 50px 10px;
     color: aliceblue;
 }
-
-
+footer a {
+    color: aliceblue;
+    font-weight: bold;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
 
 @media (max-width: 768px) {
     main {
