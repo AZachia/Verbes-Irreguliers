@@ -5,14 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Not found</title>
     <style>
-        body
-        {
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
         }
+        img {
+            width: 50%;
+            display: none;
+        }
+        
     </style>
 </head>
 <body>
+    <a href="/">🏠 Home</a>
     <h1>404 - Not Found</h1>
-    <img src="https://www.shutterstock.com/image-photo/lost-male-tourist-holding-map-260nw-195205469.jpg" alt="404: not found">
+    <img src="https://www.shutterstock.com/image-photo/lost-male-tourist-holding-map-260nw-195205469.jpg" alt="Lost">
+    <img src="https://www.shutterstock.com/image-photo/businessman-lost-field-using-map-260nw-23639869.jpg" alt="Lost">
+    <img src="https://www.shutterstock.com/image-photo/indecisive-man-lost-chooses-right-260nw-466547954.jpg" alt="Lost">
+    <img src="https://www.shutterstock.com/image-photo/young-man-woman-got-lost-260nw-88500664.jpg" alt="Lost">
+    <img src="https://www.shutterstock.com/shutterstock/photos/283372040/display_1500/stock-photo-group-of-young-friends-lost-in-nature-looking-at-map-283372040.jpg" alt="Lost">
+    <br>
+    <a href="https://perdu.com" style="color:#eee;">You're lost?</a>
 </body>
+<script defer>
+    const images = document.querySelectorAll("img");
+    const choice = Math.floor(Math.random() * images.length);
+    images[choice].style.display = "block";
+</script>
 </html>
