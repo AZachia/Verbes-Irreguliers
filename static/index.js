@@ -222,11 +222,11 @@ function showResult() {
 
     // afficher le score
     let scoreH2 = document.getElementById("score-h2");
-    scoreH2.innerHTML = "Votre score: " + score + " / " + verbes.length*3;
+    scoreH2.innerHTML = "Score: " + score + " / " + verbes.length*3;
 
     // afficher le temps
     let timeP = document.getElementById("time-p");
-    timeP.innerHTML = "Votre temps: " + FormatTime(EndTime - starttime);
+    timeP.innerHTML = "Time: " + FormatTime(EndTime - starttime);
 
 }
 
