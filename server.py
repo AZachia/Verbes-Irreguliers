@@ -99,4 +99,4 @@ def index():
 
 if __name__ == "__main__":
     # Lancer le serveur Flask
-    app.run(debug=True) # Enlever debug=True pour la production
+    app.run()
