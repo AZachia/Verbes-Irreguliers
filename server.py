@@ -43,7 +43,7 @@ def choisir_questions(fichiercsv: list, nb: int = 10) -> list:
             questions.append(verbe)
     return questions
 
-def generer_cle(randrange: tuple|list = (15, 25)) -> str:
+def generer_cle(randrange = (15, 25)) -> str:
     """Génère une clé aléatoire de longueur aléatoire entre 15 et 25 caractères"""
     chars = """abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"""
     nb = random.randint(*randrange)
