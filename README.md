@@ -53,6 +53,8 @@ sequenceDiagram
 
 L'utilisateur chosit le niveau (le fichier de verbe a utiliser) et est redirigé vers la page web correspondant.
 
+Le temps mis pour répondre ne compte pas dans le score final.
+
 
 # 💡 Problèmes rencontrés
 
