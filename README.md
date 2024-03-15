@@ -82,4 +82,7 @@ devient:
 
 Certains verbes peuvent s'ecrire de  différantes façons, comme par example be: was/where ou dream: dreamt/dreamed
 
-Pour permetre a l'utilisateur de valider la réponse si un des 2 est rentré, nous avons du ajouter un systeme de conditions pour verifier la précence du caratère séparateur dans la réponse (`"/"`), de faire une liste de réponses valides a partire de la réponce initiale et finalement de vérifier si la réponce de l'utilisateur est présente dans cette nouvelle liste. 
+Pour permetre a l'utilisateur de valider la réponse si un des 2 est rentré, nous avons du ajouter un systeme de conditions pour verifier la précence du caratère séparateur dans la réponse (`"/"`), de faire une liste de réponses valides a partire de la réponce initiale et finalement de vérifier si la réponce de l'utilisateur est présente dans cette nouvelle liste.
+
+## Eviter la triche
+Pour éviter que l'utilisateur triche et regarde les réponses sur internet, nous avons ajouté une fonctionnalité qui permet de détecter les changements de page lors du test. Quand cet événement se produit, le test s'arrête et demande a l'utilisateur de retourner à la page d'accueil
